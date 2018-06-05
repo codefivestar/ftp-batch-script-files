@@ -19,9 +19,14 @@ echo cd %remote_folder%>>ftpcmd.dat
 echo put C:\temp\%file%>>ftpcmd.dat
 echo bye>>ftpcmd.dat
 
-echo "Inicia Carga Archivo de Pagos "
+echo "Inicia Carga de Archivo"
 ftp -s:ftpcmd.dat
-del ftpcmd.dat
+
+::borra archivo de configuracion creado.
+del ftpcmd.dat 
+
 echo " Transferencia Completa "
-::pause
+
+pause
+
 exit
